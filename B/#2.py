@@ -3,6 +3,8 @@ second_l = []
 count = 1
 count2 = 1
 count_l = 0
+priemer = 0
+dlzka = 0
 with open('cisla.txt', 'r') as path_file:
     with open('riesenie.txt', 'w') as dest_file:
         for line in path_file:
@@ -22,4 +24,8 @@ with open('cisla.txt', 'r') as path_file:
             dest_file.write(k)
         dest_file.write("\n")
         for j in second_l:
+            priemer += int(j)
+            dlzka += 1
             dest_file.write(j)
+        dest_file.write("\n")
+        dest_file.write(str(priemer/dlzka))
